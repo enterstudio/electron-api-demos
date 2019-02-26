@@ -20,7 +20,9 @@
     "windows-store": "node ./script/windows-store.js",
     "mas": "./script/mas.sh",
     "prepare-release": "npm run package && npm run sign-exe && npm run installer && npm run sign-installer",
-    "release": "node ./script/release.js"
+    "release": "node ./script/release.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -56,11 +58,13 @@
     "electron-json-storage": "^2.0.0",
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^7.1.0",
-    "highlight.js": "^9.3.0"
+    "highlight.js": "^9.3.0",
+    "snyk": "^1.134.2"
   },
   "standard": {
     "env": {
       "mocha": true
     }
-  }
+  },
+  "snyk": true
 }
